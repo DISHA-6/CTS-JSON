@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Products</title>
+</head>
+<body>
+    <h2>Json Product List</h2>
+    <div id="output"></div>
+    <script>
+        fetch('products.json')
+        .then(response=>response.json())
+        .then(data =>{
+            console.log('Product Listing: ',data)
+            const result = data.products.map(u=>`<p>Name: ${u.name}, Price:${u.price}</p>`)
+            document.getElementById('output').innerHTML = result.join("")
+        })
+    </script>
+</body>
+</html>
+
+<!-- [
+  "<p>Name: Rose Plant, Price:150 </p>",
+  "<p>Name: Tulsi Plant, Price:100 </p>",
+  ...
+] -->

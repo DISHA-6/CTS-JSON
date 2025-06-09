@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Global University Data Analysis</title>
+</head>
+<body>
+  <h2>University Data Analysis</h2>
+  <pre id="output"></pre>
+
+  <script>
+    const universityData = {
+      universityName: "Global University",
+      campus: { city: "New York", state: "NY" },
+      departments: [
+        {
+          name: "Computer Science",
+          budget: 3000000,
+          faculty: [
+            {
+              id: "F001",
+              firstName: "Jane",
+              lastName: "Williams",
+              expertise: ["AI", "Python", "Machine Learning"],
+              courses: ["Data Structures", "AI Fundamentals"]
+            },
+            // Add more faculty if needed
+          ]
+        },
+        // Add more departments if needed
+      ]
+    };
+
+    // Function to display basic university data
+    function analyzeUniversity(data) {
+      let output = "";
+
+      output += `University: ${data.universityName}\n`;
+      output += `Location: ${data.campus.city}, ${data.campus.state}\n\n`;
+
+      data.departments.forEach((dept) => {
+        output += `Department: ${dept.name}\n`;
+        output += `Budget: $${dept.budget}\n`;
+        output += `Faculty:\n`;
+
+        dept.faculty.forEach((f) => {
+          output += `  - ${f.firstName} ${f.lastName} (ID: ${f.id})\n`;
+          output += `    Expertise: ${f.expertise.join(", ")}\n`;
+          output += `    Courses: ${f.courses.join(", ")}\n`;
+        });
+
+        output += "\n";
+      });
+
+      return output;
+    }
+
+    document.getElementById("output").textContent = analyzeUniversity(universityData);
+  </script>
+</body>
+</html>

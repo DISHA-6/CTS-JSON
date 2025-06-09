@@ -1,0 +1,29 @@
+{
+    "orders":[
+        {
+            "order_id":101,
+            "customer": "Amit",
+            "items":["Rose Plant","Tulsi Plant"],
+            "total_amount":250,
+            "order_date":"2025-06-08",
+            "status":"Delivered"
+        },
+        {
+            "order_id":102,
+            "customer": "Rachel",
+            "items":["Snake Plant"],
+            "total_amount":200,
+            "order_date":"2025-06-07",
+            "status":"Shipped"
+        },
+        {
+            "order_id":103,
+            "customer": "Yogesh",
+            "items":["Lilly Plant","Sunflower Plant"],
+            "total_amount":400,
+            "order_date":"2025-06-06",
+            "status":"Pending"
+        }
+
+    ]
+}

@@ -1,0 +1,84 @@
+{
+    "companyName":"Global Tech Solutions Inc",
+    "foundedYear":2005,
+    "isActive": true,
+    "headquarters":{
+        "address":"123 Innovation Drive",
+        "city": "Silicon Valley",
+        "state":"CA",
+        "zipcode":"94025"
+    },
+    "departments":[
+        {
+            "name":"Software Development",
+            "budget": 5000000,
+            "employees":[
+                {
+                    "id":"DEV001",
+                    "firstName":"Alice",
+                    "lastName":"Smith",
+                    "skills":["JavaScript","Node.js","Python","React"],
+                    "projects":[
+                        {"name":"Project Alpha","status":"Completed"},
+                        {"name":"Project Beta", "status":"In Progress"}
+                    ]
+                },
+                {
+                    "id":"DEV002",
+                    "firstName":"Bob",
+                    "lastName":"Johnson",
+                    "skills":["Python","Djago","AWS"],
+                    "projects":[
+                        {"name":"Project Gamma", "status":"Pending"}
+                    ]
+                }
+            ]
+        },
+        {
+            "name":"Marketing",
+            "budget":1500000,
+            "employees":[
+                {
+                    "id":"MKT001",
+                    "firstName":"Carol",
+                    "lastName":"White",
+                    "skills":["SEO","Content Marketing","Social Media"],
+                    "campaigns":["Summer Sale","Holiday Campaign"]
+                }
+            ]
+        },
+        {
+            "name":"Human Resources",
+            "budget":800000,
+            "employees":[
+                {
+                    "id":"HR001",
+                    "firstName":"David",
+                    "lastName":"Brown",
+                    "skills":["Recruitment","Employee Relations"]
+                }
+            ]
+        }
+    ],
+    "products":[
+        {
+            "id":"PROD001",
+            "name":"Cloud Computing Platform",
+            "versions":[
+                {"versionNumber":"1.0","releaseDate":"2020-01-15"},
+                {"versionNumber":"2.0","releaseDate":"2022-03-20"}
+            ]
+        },
+        {
+            "id":"PROD002",
+            "name":"AI Analytics Suite",
+            "versions":[
+                {"versionNumber":"1.0","releaseDate":"2023-07-01"}
+            ]
+        }
+    ]
+
+}
+
+
+

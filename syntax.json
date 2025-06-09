@@ -1,0 +1,22 @@
+[
+    {
+        "course":"JavaScript",
+        "duration":"6 days",
+        "topics":["Variables","Functions", "JSON"]
+    },
+    {
+        "course":"Python",
+        "duration":"30 days",
+        "topics": ["Data Types", "OOP","Modules"]
+    },
+    {
+        "course":"React",
+        "duration":"45 days",
+        "topics":["React Hooks","Redux","RestAPI Calling"]
+    },
+    {
+        "course":"Angular",
+        "duration":"45 days",
+        "topics":["Routing","Services","RestAPI Calling"]
+    }
+]

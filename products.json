@@ -1,0 +1,11 @@
+{
+  "products": [
+    { "id": 1, "name": "Rose Plant", "price": 150 },
+    { "id": 2, "name": "Tulsi Plant", "price": 100 },
+    { "id": 3, "name": "Lilly Plant", "price": 250 },
+    { "id": 4, "name": "Mango Plant", "price": 500 },
+    { "id": 5, "name": "Jasmine Plant", "price": 200 }
+  ]
+}
+
+

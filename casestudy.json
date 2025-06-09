@@ -1,0 +1,19 @@
+{
+  "universityName": "Global University",
+  "campus": { "city": "New York", "state": "NY" },
+  "departments": [
+    {
+      "name": "Computer Science",
+      "budget": 3000000,
+      "faculty": [
+        {
+          "id": "F001",
+          "firstName": "Jane",
+          "lastName": "Williams",
+          "expertise": ["AI", "Python", "Machine Learning"],
+          "courses": ["Data Structures", "AI Fundamentals"]
+        }
+      ]
+    }
+  ]
+}
