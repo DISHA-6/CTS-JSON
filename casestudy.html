@@ -1,61 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Global University Data Analysis</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Data</title>
 </head>
 <body>
-  <h2>University Data Analysis</h2>
-  <pre id="output"></pre>
+    <h2>📚 University Details</h2>
+    <div id="output"></div>
 
-  <script>
-    const universityData = {
-      universityName: "Global University",
-      campus: { city: "New York", state: "NY" },
-      departments: [
-        {
-          name: "Computer Science",
-          budget: 3000000,
-          faculty: [
-            {
-              id: "F001",
-              firstName: "Jane",
-              lastName: "Williams",
-              expertise: ["AI", "Python", "Machine Learning"],
-              courses: ["Data Structures", "AI Fundamentals"]
-            },
-            // Add more faculty if needed
-          ]
-        },
-        // Add more departments if needed
-      ]
-    };
+    <script>
+        fetch('casestudy.json')
+        .then(res => res.json())
+        .then(data => {
+            console.log("University Data: ", data);
 
-    // Function to display basic university data
-    function analyzeUniversity(data) {
-      let output = "";
+            let result = `<p><strong>University:</strong> ${data.universityName}<br><strong>Location:</strong> ${data.campus.city}, ${data.campus.state}</p>`;
 
-      output += `University: ${data.universityName}\n`;
-      output += `Location: ${data.campus.city}, ${data.campus.state}\n\n`;
+            result += data.departments.map(dept => {
+                const facultyHTML = dept.faculty.map(fac => {
+                    return `<p>${fac.firstName} ${fac.lastName} (ID: ${fac.id})<br>Expertise: ${fac.expertise.join(", ")}<br>Courses: ${fac.courses.join(", ")}</p>`;
+                }).join("");
 
-      data.departments.forEach((dept) => {
-        output += `Department: ${dept.name}\n`;
-        output += `Budget: $${dept.budget}\n`;
-        output += `Faculty:\n`;
+                return `<div><strong>Department:</strong> ${dept.name}<br><strong>Budget:</strong> $${dept.budget}<br><strong>Faculty:</strong><br>${facultyHTML}</div>`;
+            }).join("");
 
-        dept.faculty.forEach((f) => {
-          output += `  - ${f.firstName} ${f.lastName} (ID: ${f.id})\n`;
-          output += `    Expertise: ${f.expertise.join(", ")}\n`;
-          output += `    Courses: ${f.courses.join(", ")}\n`;
-        });
-
-        output += "\n";
-      });
-
-      return output;
-    }
-
-    document.getElementById("output").textContent = analyzeUniversity(universityData);
-  </script>
+            document.getElementById("output").innerHTML = result;
+        })
+        .catch(error => {
+            document.getElementById("output").innerHTML = "Error loading JSON: " + error;
+        });
+    </script>
 </body>
 </html>
