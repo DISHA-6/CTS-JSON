@@ -1,0 +1,62 @@
+{
+    "products":[ 
+        {
+            "id":1,
+            "name":"Microphone",  
+            "category":"Electronics", 
+            "price":599.99, 
+            "InStock":true 
+        },
+        {
+            "id":2,
+            "name": "Wireless Headphones", 
+            "category": "Electronics", 
+            "price":299.99, 
+            "InStock":false 
+        },
+        {
+            "id":3, 
+            "name": "Montior", 
+            "category": "Electronics", 
+            "price":499.99, 
+            "InStock":true 
+        },
+        {
+            "id":4,
+            "name": "Laptop",
+            "category": "Electronics",
+            "price":999.99,
+            "InStock":true
+        }
+    ],
+    "users":[
+        {
+            "id":1, 
+            "username":"johndoe", 
+            "email":"john@example.com", 
+            "role": "admin" 
+        },
+        {
+            "id":2, 
+            "username": "charlesking", 
+            "email":"charles@example.com", 
+            "role":"user" 
+        }
+    ],
+    "orders":[
+        {
+            "orderId":1,
+            "userId":1,
+            "products":2,
+            "quantity":2,
+            "status":"confirmed"
+        },
+        {
+            "orderId":2,
+            "userId":2,
+            "products":3,
+            "quantity":1,
+            "status":"pending"
+        }
+    ]
+}
