@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Cards</title>
+</head>
+<body>
+    <h2>Codenesr Academy - Organization Members</h2>
+    <div class="user-container" id="userCards"></div>
+    <script>
+        fetch('users.json')
+        .then(response =>json())
+        .then(data =>{
+            const container=document.getElementById("userCards")
+            data.users.forEach(user =>{
+                conatiner.innerHtml +=`
+                <div class="user-card">
+                    <h3>${user.fullName}</h3>
+                    <p><strong>Username:</strong>${user.username}</p>
+                    <p><strong>Role:</strong>${user.role}</p>
+                    <p><strong>Location:</strong>${user.location}</p>
+                </div>
+            `    
+            })
+            .catch(err=>{
+                document.getElementById("userCards").innerHTML="<p>Erro Loading</p>";
+                console.error("Failed to load users.json",err)
+            })
+        })
+    </script>
+</body>
+</html>

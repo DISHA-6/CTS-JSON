@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Product Catalog</h1>
+
+    <div class="filters">
+        <label for="category">Filter by Category:</label>
+        <select id="category">
+            <option value="All">All Categories</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Audio">Audio</option>
+            <option value="Smart Home">Smart Home</option>
+            <option value="Photography">Photography</option>
+            <option value="Home & Office">Home & Office</option>
+            <option value="Computers">Computers</option>
+        </select>
+
+        <label for="availability">Availability:</label>
+        <select id="availability">
+            <option value="All">All Products</option>
+            <option value="InStock">In Stock</option>
+            <option value="OutOfStock">Out of Stock</option>
+        </select>
+
+        <button onclick="applyFilters()">Apply Filters</button>
+    </div>
+
+    <table id="productTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Brand</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Description</th>
+                <th>Shipping Info</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        let products = [];
+
+        fetch('products.json')
+            .then(res => res.json())
+            .then(data => {
+                products = data;
+                displayProducts(products);
+            })
+            .catch(error => console.error('Error loading JSON:', error));
+
+        function displayProducts(data) {
+            const tbody = document.querySelector('#productTable tbody');
+            tbody.innerHTML = '';
+            data.forEach(product => {
+                const tr = document.createElement('tr');
+
+                const statusClass = product.inStock ? 'instock' : 'outofstock';
+                const statusText = product.inStock ? `In Stock (${product.stockQuantity})` : 'Out of Stock';
+
+                tr.innerHTML = `
+                    <td>${product.productId}</td>
+                    <td>${product.name}</td>
+                    <td>${product.brand}</td>
+                    <td>${product.category}</td>
+                    <td>${product.currency} ${product.price.toFixed(2)}</td>
+                    <td><span class="status ${statusClass}">${statusText}</span></td>
+                    <td>${product.description}</td>
+                    <td>
+                        <ul>
+                            <li><strong>weightKg:</strong> ${product.shippingInfo.weightKg}</li>
+                            <li><strong>dimensionsCm:</strong>
+                                <ul>
+                                    <li>length: ${product.shippingInfo.dimensionsCm.length}</li>
+                                    <li>width: ${product.shippingInfo.dimensionsCm.width}</li>
+                                    <li>height: ${product.shippingInfo.dimensionsCm.height}</li>
+                                </ul>
+                            </li>
+                            <li><strong>estimatedDeliveryDays:</strong> ${product.shippingInfo.estimatedDeliveryDays}</li>
+                        </ul>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function applyFilters() {
+            const category = document.getElementById('category').value;
+            const availability = document.getElementById('availability').value;
+
+            let filtered = products;
+
+            if (category !== 'All') {
+                filtered = filtered.filter(p => p.category === category);
+            }
+
+            if (availability === 'InStock') {
+                filtered = filtered.filter(p => p.inStock);
+            } else if (availability === 'OutOfStock') {
+                filtered = filtered.filter(p => !p.inStock);
+            }
+
+            displayProducts(filtered);
+        }
+    </script>
+</body>
+</html>

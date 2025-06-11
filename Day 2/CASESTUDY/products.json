@@ -1,0 +1,182 @@
+[
+  {
+    "productId": "PROD001",
+    "name": "Ultra HD Smart TV 65-inch",
+    "category": "Electronics",
+    "subCategory": "Televisions",
+    "brand": "VisionTech",
+    "price": 1299.99,
+    "currency": "USD",
+    "inStock": true,
+    "stockQuantity": 150,
+    "description": "Experience stunning 4K visuals and smart features with our 65-inch Ultra HD Smart TV. Built-in streaming apps, voice control, and a sleek design.",
+    "shippingInfo": {
+      "weightKg": 25.5,
+      "dimensionsCm": {"length": 145, "width": 85, "height": 8},
+      "estimatedDeliveryDays": 3
+    },
+    "manufactureDate": "2024-01-20"
+  },
+  {
+    "productId": "PROD002",
+    "name": "Wireless Noise-Cancelling Headphones",
+    "category": "Audio",
+    "subCategory": "Headphones",
+    "brand": "SonicFlow",
+    "price": 249.00,
+    "currency": "USD",
+    "inStock": true,
+    "stockQuantity": 300,
+    "description": "Immerse yourself in pure audio with our industry-leading noise-cancelling headphones. Comfortable design, long battery life, and crystal-clear sound.",
+    "shippingInfo": {
+      "weightKg": 0.3,
+      "dimensionsCm": {"length": 20, "width": 15, "height": 8},
+      "estimatedDeliveryDays": 2
+    },
+    "manufactureDate": "2023-11-01"
+  },
+  {
+    "productId": "PROD003",
+    "name": "Smart Home Security Camera",
+    "category": "Smart Home",
+    "subCategory": "Security",
+    "brand": "GuardPro",
+    "price": 89.50,
+    "currency": "USD",
+    "inStock": false,
+    "stockQuantity": 0,
+    "description": "Keep an eye on your home 24/7 with our easy-to-install smart security camera. Features motion detection, night vision, and two-way audio.",
+    "shippingInfo": {
+      "weightKg": 0.45,
+      "dimensionsCm": {"length": 10, "width": 8, "height": 15},
+      "estimatedDeliveryDays": 4
+    },
+    "manufactureDate": "2023-09-10"
+  },
+  {
+    "productId": "PROD004",
+    "name": "Robotic Vacuum Cleaner with Mopping",
+    "category": "Smart Home",
+    "subCategory": "Cleaning Appliances",
+    "brand": "CleanBot",
+    "price": 499.00,
+    "currency": "USD",
+    "inStock": true,
+    "stockQuantity": 75,
+    "description": "Let CleanBot handle your floor cleaning. This intelligent robot vacuums and mops, navigating your home with precision and returning to its dock automatically.",
+    "shippingInfo": {
+      "weightKg": 3.8,
+      "dimensionsCm": {"length": 35, "width": 35, "height": 10},
+      "estimatedDeliveryDays": 5
+    },
+    "manufactureDate": "2024-02-15"
+  },
+  {
+    "productId": "PROD005",
+    "name": "Professional DSLR Camera Kit",
+    "category": "Photography",
+    "subCategory": "Cameras",
+    "brand": "PhotoMaster",
+    "price": 1899.99,
+    "currency": "USD",
+    "inStock": true,
+    "stockQuantity": 20,
+    "description": "Capture stunning photos and videos with this professional-grade DSLR camera kit. Includes versatile lenses and essential accessories.",
+    "shippingInfo": {
+      "weightKg": 4.0,
+      "dimensionsCm": {"length": 30, "width": 25, "height": 18},
+      "estimatedDeliveryDays": 4
+    },
+    "manufactureDate": "2023-10-05"
+  },
+  {
+    "productId": "PROD006",
+    "name": "Lightweight Travel Tripod",
+    "category": "Photography",
+    "subCategory": "Accessories",
+    "brand": "GearUp",
+    "price": 79.99,
+    "currency": "USD",
+    "inStock": true,
+    "stockQuantity": 100,
+    "description": "Portable and sturdy tripod, perfect for photographers on the go. Extends up to 60 inches.",
+    "shippingInfo": {
+      "weightKg": 1.2,
+      "dimensionsCm": {"length": 42, "width": 10, "height": 10},
+      "estimatedDeliveryDays": 3
+    },
+    "manufactureDate": "2024-01-10"
+  },
+  {
+    "productId": "PROD007",
+    "name": "Ergonomic Office Chair",
+    "category": "Home & Office",
+    "subCategory": "Furniture",
+    "brand": "ComfortZone",
+    "price": 349.00,
+    "currency": "USD",
+    "inStock": true,
+    "stockQuantity": 50,
+    "description": "Work in comfort with our fully adjustable ergonomic office chair. Designed for long hours of productivity.",
+    "shippingInfo": {
+      "weightKg": 18.0,
+      "dimensionsCm": {"length": 70, "width": 65, "height": 100},
+      "estimatedDeliveryDays": 7
+    },
+    "manufactureDate": "2024-02-20"
+  },
+  {
+    "productId": "PROD008",
+    "name": "Adjustable Standing Desk",
+    "category": "Home & Office",
+    "subCategory": "Furniture",
+    "brand": "DeskPro",
+    "price": 599.00,
+    "currency": "USD",
+    "inStock": true,
+    "stockQuantity": 40,
+    "description": "Switch between sitting and standing effortlessly with our electric adjustable desk. Improve your health and productivity.",
+    "shippingInfo": {
+      "weightKg": 30.0,
+      "dimensionsCm": {"length": 120, "width": 80, "height": 15},
+      "estimatedDeliveryDays": 7
+    },
+    "manufactureDate": "2024-03-01"
+  },
+  {
+    "productId": "PROD009",
+    "name": "High-Performance Gaming Laptop",
+    "category": "Computers",
+    "subCategory": "Laptops",
+    "brand": "GameForce",
+    "price": 1999.99,
+    "currency": "USD",
+    "inStock": true,
+    "stockQuantity": 25,
+    "description": "Dominate the competition with our powerful gaming laptop. Featuring a high-refresh-rate display and top-tier components.",
+    "shippingInfo": {
+      "weightKg": 2.5,
+      "dimensionsCm": {"length": 36, "width": 25, "height": 2.5},
+      "estimatedDeliveryDays": 3
+    },
+    "manufactureDate": "2024-04-10"
+  },
+  {
+    "productId": "PROD010",
+    "name": "Wireless Gaming Mouse",
+    "category": "Computers",
+    "subCategory": "Peripherals",
+    "brand": "GameForce",
+    "price": 79.99,
+    "currency": "USD",
+    "inStock": true,
+    "stockQuantity": 180,
+    "description": "Achieve precision and speed with our lightweight wireless gaming mouse. Designed for competitive gaming.",
+    "shippingInfo": {
+      "weightKg": 0.15,
+      "dimensionsCm": {"length": 12, "width": 6, "height": 4},
+      "estimatedDeliveryDays": 2
+    },
+    "manufactureDate": "2024-03-28"
+  }
+]

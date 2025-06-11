@@ -1,0 +1,38 @@
+{
+    "school":"Green Valley High School",
+    "students":[
+        {
+            "id":"$101",
+            "name":"Arjun Mehta",
+            "grade":"10",
+            "section":"A",
+            "subjects":[
+                {"name":"Math","marks":92},
+                {"name":"Science","marks":89},
+                {"name":"English","marks":85}
+            ]
+        },
+        {
+            "id":"$102",
+            "name":"Pooja Nair",
+            "grade":"10",
+            "section":"B",
+            "subjects":[
+                {"name":"Math","marks":95},
+                {"name":"Science","marks":90},
+                {"name":"English","marks":93}
+            ]
+        },
+        {
+            "id":"$103",
+            "name":"Ravi Kumar",
+            "grade":"10",
+            "section":"A",
+            "subjects":[
+                {"name":"Math","marks":80},
+                {"name":"Science","marks":78},
+                {"name":"English","marks":82}
+            ]
+        }
+    ]
+}

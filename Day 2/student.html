@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Records Table</title>
+    <style>
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            background-color: #f4faff;
+            padding: 30px;
+        }
+        h2{
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        th,td{
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        th{
+            background-color: #007acc;
+            color:white;
+        }
+        .highlight{
+            background-color: #d1eaff;
+        }
+    </style>
+</head>
+<body>
+  <h2>Top Performing Students - Green Valley High School</h2>  
+
+  <table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>ID</th>
+            <th>Grade</th>
+            <th>Section</th>
+            <th>Math</th>
+            <th>Science</th>
+            <th>English</th>
+            <th>Average</th>
+        </tr>
+    </thead>
+    <tbody id="studentTableBody">
+        <!-- Dynamic rows go here -->
+    </tbody>
+    <script>
+        fetch('students.json')
+        .then(res => res.json())
+        .then(data =>{
+            const tbody = document.getElementById('studentTableBody');
+
+            //Step 1: Calculate average
+            const studaverage = data.students.map(student =>{
+                const total = student.subjects.reduce((sum,sub)=>sum+sub.marks,0)
+                const avg = total / student.subjects.length;
+                return{...student, average: avg.toFixed(2)}
+            })
+        //})
+
+        //Step 2: Sort by average descending
+        studaverage.sort((a,b)=>b.average - a.average)
+
+        //Step 3: Generate table rows
+        studaverage.forEach((stud,index)=>{
+            const [math, science, english] = stud.subjects.map(sub =>sub.marks);
+
+            const row = `
+            <tr class="${index === 0 ? 'highlight' : ''}">
+                <td>${stud.name}</td>
+                <td>${stud.id}</td>
+                <td>${stud.grade}</td>
+                <td>${stud.section}</td>
+                <td>${math}</td>
+                <td>${science}</td>
+                <td>${english}</td>
+                <td><strong>${stud.average}</strong></td>
+            </tr>
+            `;
+            tbody.innerHTML +=row;
+            })
+        })
+        .catch(err=>{
+            document.getElementById("studentTableBody").innerHTML = "<tr><td colspan='8'>Failed to load "+
+                "student data.</td><tr>";
+            console.error('Fetch error: ',err);
+        })
+        /*reduce((sum,sub)=>sum+sub.marks,0) 
+        reduce() - method loops through the array and accumulates values
+        sum -> accumulator(total)
+        sub -> current subject
+        sub.marks -> current subject marks
+        0 -> starting value of sum
+        */
+    </script>
+  </table>
+</body>
+</html>
