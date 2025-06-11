@@ -1,0 +1,52 @@
+{
+  "clothstore": [
+    {
+      "id": "1",
+      "name": "Women's Kurti",
+      "category": "Women",
+      "size": "M",
+      "price": 1099,
+      "instock": true
+    },
+    {
+      "id": "2",
+      "name": "Men's T-Shirt",
+      "category": "Men",
+      "size": "L",
+      "price": 799,
+      "instock": true
+    },
+    {
+      "id": "3",
+      "name": "Women's Saree",
+      "category": "Women",
+      "size": "XL",
+      "price": 1499,
+      "instock": false
+    },
+    {
+      "id": "4",
+      "name": "Men's Jeans",
+      "category": "Men",
+      "size": "M",
+      "price": 999,
+      "instock": true
+    },
+    {
+      "id": "5",
+      "name": "Women's Top",
+      "category": "Women",
+      "size": "S",
+      "price": 699,
+      "instock": true
+    },
+    {
+      "id": "6",
+      "name": "Women's Kurti",
+      "category": "Women",
+      "size": "Xl",
+      "price": 399,
+      "instock": true
+    }
+  ]
+}

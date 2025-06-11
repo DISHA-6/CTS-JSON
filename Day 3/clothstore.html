@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloth Store Dashboard</title>
+</head>
+<body>
+    <h2>Cloth Store Products Dashboard</h2>
+    <button onclick="logout()">Logout</button>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Size</th>
+                <th>Price</th>
+                <th>InStock</th>
+            </tr>
+        </thead>
+        <tbody id="productTable">
+            <!-- Dynamic row here -->
+        </tbody>
+    </table>
+
+    <script>
+        if(!localStorage.getItem("loggedInUser")){ //(!false) = true
+            alert("Please login first!")
+            window.location.href="login.html"
+        }
+
+        function logout(){
+            localStorage.removeItem("loggedInUser")
+            window.location.href="index.html"
+        }
+
+        const url="http://localhost:3000/clothstore";
+        function loadProducts(){
+            fetch(url)
+            .then(res=>res.json())
+            .then(data =>{
+                const table = document.getElementById("productTable")
+                table.innerHTML = "";
+
+                data.forEach(d =>{
+                    const row = 
+                    `<tr>
+                        <td>${d.id}</td>
+                        <td>${d.name}</td>
+                        <td>${d.category}</td>
+                        <td>${d.size}</td>
+                        <td>${d.price}</td>
+                        <td>${d.instock ?"In Stock":"Out of Stock"}</td>
+                    </tr>`;
+                    table.innerHTML += row;
+                })
+            })
+        }
+
+        setInterval(loadProducts,5000)
+        loadProducts();
+    </script>
+</body>
+</html>

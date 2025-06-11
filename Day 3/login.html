@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form id="loginForm"> 
+        Username: <input type="email" placeholder="Enter Email" id="email" required /><br> 
+        Password: <input type="password" placeholder="Enter Password" id="password" required /> 
+        <br> 
+        <button type="submit">Login</button> 
+    </form> 
+    <script>
+        document.getElementById("loginForm").addEventListener("submit",function(e){
+            e.preventDefault();
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const storeUser = JSON.parse(localStorage.getItem(email))
+            if(storeUser && storeUser.password === password){
+                localStorage.setItem("loggedInUser",email);
+                alert("Login Successfull!!");
+                window.location.href = "clothstore.html";
+            }
+            else{
+                alert("Invalid Email or Password");
+            }
+        })
+    </script>
+</body>
+</html>
